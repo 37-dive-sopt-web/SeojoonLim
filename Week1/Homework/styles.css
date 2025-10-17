@@ -1,3 +1,275 @@
+/* 헤더 */
+#top-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 10px 40px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+.top-header-item {
+  flex-grow: 1;
+}
+
+/* 네비게이션 */
+#side-nav {
+  text-wrap: nowrap;
+  position: sticky;
+  left: 0px;
+  top: 125px;
+  margin: 20px 20px 0px 20px;
+}
+.side-nav-list {
+  display: block;
+  padding-left: 10px;
+  padding-right: 28px;
+}
+.side-nav-list:first-of-type {
+  margin-bottom: 8px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.side-nav-list:not(:first-of-type):not(:last-of-type) {
+  margin-bottom: 8px;
+  border-radius: 20px;
+}
+.side-nav-list:last-of-type {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* 히어로 */
+#hero {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  background-color: rgb(255, 240, 224);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 20px 12px;
+  margin-bottom: 50px;
+  margin-right: 40px;
+  scroll-margin-top: 100px;
+}
+.hero-profile {
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 150px;
+  height: 150px;
+}
+.hero-profile:hover {
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+.hero-button {
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 24px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 221, 221);
+  padding: 8px 16px;
+}
+.hero-button:hover {
+  transform: scale(1.1);
+}
+
+/* 스킬 태그 */
+#skills {
+  margin-bottom: 50px;
+  margin-right: 40px;
+  scroll-margin-top: 100px;
+}
+#skill-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+#skill-tags > span {
+  background-color: rgb(247, 237, 206);
+  padding: 6px 12px;
+  border-radius: 24px;
+}
+
+/* 카드 */
+#cards {
+  margin-bottom: 50px;
+  margin-right: 40px;
+  scroll-margin-top: 100px;
+}
+.cards-grid-container {
+  display: grid;
+  gap: 15px;
+}
+.card-item {
+  padding: 0px 0px 20px 0px;
+  border-radius: 24px;
+  border: 1px solid rgb(221, 221, 221);
+}
+.card-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card-item > img {
+  object-position: 50% 50%;
+  object-fit: cover;
+  width: 100%;
+  height: 160px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+.heart {
+  filter: grayscale(100%);
+  height: 24px;
+  width: 24px;
+}
+.heart:hover {
+  filter: none;
+}
+
+/* 사진첩 */
+#albums {
+  margin-bottom: 50px;
+  margin-right: 40px;
+  scroll-margin-top: 100px;
+}
+#infinite-banner {
+  border: 0.5px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  padding: 10px;
+  background-color: bisque;
+  overflow-x: hidden;
+  flex: 0 0 100%;
+  display: flex;
+}
+#infinite-banner:hover .album-imgs-container {
+  animation-play-state: paused;
+}
+.album-imgs-container {
+  display: flex;
+  column-gap: 14px;
+  padding-right: 14px;
+  -ms-overflow-style: none;
+  will-change: transform;
+  scroll-snap-type: x mandatory;
+  animation: scrolling 80s linear infinite;
+}
+.album-imgs-container::-webkit-scrollbar {
+  display: none;
+}
+.album-img {
+  scroll-snap-align: start;
+  object-position: 50% 50%;
+  border-radius: 10px;
+  object-fit: cover;
+  width: 300px;
+  height: 220px;
+}
+.album-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+}
+@keyframes scrolling {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* 네비게이션 */
+#side-nav ul {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 10px;
+  margin: 0;
+  padding: 12px;
+}
+.side-nav-list:hover {
+  background-color: rgb(208, 247, 206);
+}
+
+/* 푸터 */
+footer {
+  background-color: rgb(255, 240, 224);
+  padding: 20px 0px;
+}
+
+/* position */
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.top-2 {
+  top: 2px;
+}
+.right-10 {
+  right: 10px;
+}
+
+/* display */
+.block {
+  display: block;
+}
+
+/* margin padding */
+.margin-0 {
+  margin: 0;
+}
+.margin-bottom-8 {
+  margin-bottom: 8px;
+}
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+/* 이미지 */
+.round-img {
+  object-position: 50% 50%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* width, height */
+.width-40 {
+  width: 40px;
+}
+.width-70 {
+  width: 70px;
+}
+.height-40 {
+  height: 40px;
+}
+.height-70 {
+  height: 70px;
+}
+
+/* text */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.font-size-28 {
+  font-size: 28px;
+}
+
 /* 기본 태그 */
 * {
   box-sizing: border-box;
@@ -11,164 +283,9 @@ a {
   outline: none;
   display: inline-block;
 }
-button {
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(221, 221, 221);
-  padding: 8px 16px;
-}
 main {
   display: flex;
   align-items: flex-start;
-}
-footer {
-  background-color: rgb(255, 240, 224);
-  padding: 20px 0px;
-}
-
-/* id */
-#top-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  padding: 10px 40px;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(221, 221, 221);
-}
-#hero {
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-  background-color: rgb(255, 240, 224);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 20px 12px;
-}
-#skill-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-#skill-tags > span {
-  background-color: rgb(247, 237, 206);
-  padding: 6px 12px;
-  border-radius: 24px;
-}
-#infinite-banner {
-  border: 0.5px solid rgb(221, 221, 221);
-  border-radius: 12px;
-  padding: 10px;
-  background-color: bisque;
-  overflow-x: hidden;
-}
-.album-imgs-container {
-  display: flex;
-  scroll-snap-type: x mandatory;
-  column-gap: 14px;
-  padding-right: 14px;
-  -ms-overflow-style: none;
-  will-change: transform;
-  animation: scrolling 80s linear infinite;
-}
-.album-imgs-container::-webkit-scrollbar {
-  display: none;
-}
-#side-nav {
-  text-wrap: nowrap;
-  position: sticky;
-  left: 0px;
-  top: 125px;
-  margin: 20px 20px 0px 20px;
-}
-#side-nav ul {
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 10px;
-  margin: 0;
-  padding: 12px;
-}
-.side-nav-list {
-  display: block;
-  padding-left: 10px;
-  padding-right: 28px;
-}
-
-/* 이미지 */
-.round-img {
-  object-position: 50% 50%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.card-item > img {
-  object-position: 50% 50%;
-  object-fit: cover;
-  width: 100%;
-  height: 160px;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-}
-.album-img {
-  scroll-snap-align: start;
-  object-position: 50% 50%;
-  border-radius: 10px;
-  object-fit: cover;
-  width: 300px;
-  height: 220px;
-}
-
-/* width, height */
-.height-40 {
-  height: 40px;
-}
-.height-70 {
-  height: 70px;
-}
-.height-150 {
-  height: 150px;
-}
-
-.width-40 {
-  width: 40px;
-}
-.width-70 {
-  width: 70px;
-}
-.width-150 {
-  width: 150px;
-}
-
-/* flex */
-.flex-column {
-  flex-direction: column;
-}
-.justify-center {
-  justify-content: center;
-}
-.flex-nowrap {
-  flex-wrap: nowrap;
-}
-.grow-1 {
-  flex-grow: 1;
-}
-.grow-0 {
-  flex-grow: 0;
-}
-.shrink-0 {
-  flex-shrink: 0;
-}
-.flex-basis-100pc {
-  flex-basis: 100%;
-}
-
-/* grid */
-.cards-grid-container {
-  display: grid;
-  gap: 15px;
-}
-.card-item {
-  padding: 0px 0px 20px 0px;
 }
 
 /* media */
@@ -196,164 +313,4 @@ footer {
   .cards-grid-container {
     grid-template-columns: repeat(5, 1fr);
   }
-}
-
-/* @keyframes */
-@keyframes scrolling {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* display */
-.block {
-  display: block;
-}
-.inline-block {
-  display: inline-block;
-}
-.flex {
-  display: flex;
-}
-.relative {
-  position: relative;
-}
-.absolute {
-  position: absolute;
-}
-.top-2 {
-  top: 2px;
-}
-.right-10 {
-  right: 10px;
-}
-.z-index-100 {
-  z-index: 100;
-}
-
-/* text */
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-.font-weight-600 {
-  font-weight: 600;
-}
-.font-size-28 {
-  font-size: 28px;
-}
-
-/* margin padding */
-.margin-0 {
-  margin: 0;
-}
-.margin-bottom-8 {
-  margin-bottom: 8px;
-}
-.margin-bottom-20 {
-  margin-bottom: 20px;
-}
-.margin-bottom-50 {
-  margin-bottom: 50px;
-}
-.margin-right-40 {
-  margin-right: 40px;
-}
-.padding-0-20 {
-  padding: 0px 20px;
-}
-.padding-right-14 {
-  padding-right: 14px;
-}
-.scroll-margin-top-100 {
-  scroll-margin-top: 100px;
-}
-
-/* transition */
-.transition-transform {
-  transition-property: transform;
-}
-.transition-transform-shadow {
-  transition-property: transform, box-shadow;
-}
-.transition-tf {
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.transition-duration-0-5s {
-  transition-duration: 0.5s;
-}
-
-/* border */
-.radius-20 {
-  border-radius: 20px;
-}
-.radius-24 {
-  border-radius: 24px;
-}
-.border-1 {
-  border: 1px solid rgb(221, 221, 221);
-}
-.top-left-radius-20 {
-  border-top-left-radius: 20px;
-}
-.top-left-radius-4 {
-  border-top-left-radius: 4px;
-}
-.top-right-radius-20 {
-  border-top-right-radius: 20px;
-}
-.top-right-radius-4 {
-  border-top-right-radius: 4px;
-}
-.bottom-left-radius-20 {
-  border-bottom-left-radius: 20px;
-}
-.bottom-left-radius-4 {
-  border-bottom-left-radius: 4px;
-}
-.bottom-right-radius-20 {
-  border-bottom-right-radius: 20px;
-}
-.bottom-right-radius-4 {
-  border-bottom-right-radius: 4px;
-}
-
-/* box-shadow */
-.hover_shadow-profile:hover {
-  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
-}
-
-/* hover */
-.album-img:hover {
-  transform: scale(1.05);
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
-}
-.card-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
-    box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.hover_scale-1-1:hover {
-  transform: scale(1.1);
-}
-.hover_heart:hover {
-  filter: none;
-}
-.side-nav-list:hover {
-  background-color: rgb(208, 247, 206);
-}
-#infinite-banner:hover .album-imgs-container {
-  animation-play-state: paused;
-}
-
-.heart {
-  filter: grayscale(100%);
-  height: 24px;
-  width: 24px;
 }

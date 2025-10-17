@@ -8,9 +8,9 @@
   </head>
   <body>
     <!-- 헤더 -->
-    <header id="top-header" class="relative z-index-100">
+    <header id="top-header">
       <!-- 1번 -->
-      <div class="grow-1">
+      <div class="top-header-item">
         <img
           class="round-img width-70 height-70"
           src="images/박재민.jpg"
@@ -18,12 +18,12 @@
         />
       </div>
       <!-- 2번 -->
-      <div class="grow-1">
-        <h2 class="text-center margin-0">임서준</h2>
+      <div class="top-header-item">
+        <h2 class="margin-0 text-center">임서준</h2>
         <a class="block text-center">안녕하세요 웹계인입니다.</a>
       </div>
       <!-- 3번 -->
-      <div class="grow-1 text-right">
+      <div class="top-header-item text-right">
         <a href="https://github.com/jm8468">
           <img
             class="round-img width-40 height-40"
@@ -53,33 +53,26 @@
       <!-- 네비게이션 -->
       <nav id="side-nav">
         <ul>
-          <li
-            class="side-nav-list margin-bottom-8 top-left-radius-20 top-right-radius-20 bottom-left-radius-4 bottom-right-radius-4"
-          >
+          <li class="side-nav-list">
             <a href="#hero">소개</a>
           </li>
-          <li class="side-nav-list margin-bottom-8 radius-20">
+          <li class="side-nav-list">
             <a href="#skills">스킬/관심사</a>
           </li>
-          <li class="side-nav-list margin-bottom-8 radius-20">
+          <li class="side-nav-list">
             <a href="#cards">나의 모습</a>
           </li>
-          <li
-            class="side-nav-list bottom-left-radius-20 bottom-right-radius-20 top-left-radius-4 top-right-radius-4"
-          >
+          <li class="side-nav-list">
             <a href="#albums">사진첩</a>
           </li>
         </ul>
       </nav>
       <div style="overflow-x: hidden">
         <!-- 히어로 섹션 -->
-        <section
-          id="hero"
-          class="margin-bottom-50 scroll-margin-top-100 margin-right-40"
-        >
+        <section id="hero">
           <div>
             <img
-              class="round-img hover_shadow-profile hover_scale-1-1 transition-transform-shadow transition-tf transition-duration-0-5s width-150 height-150"
+              class="hero-profile round-img"
               src="images/임서준 프로필.jpg"
               alt="임서준"
             />
@@ -92,24 +85,13 @@
               어제보다 더 나은 개발자가 되도록 노력하겠습니다!!
             </div>
             <div>
-              <button
-                class="transition-transform transition-tf transition-duration-0-5s hover_scale-1-1 radius-24"
-              >
-                반가워요
-              </button>
-              <button
-                class="transition-transform transition-tf transition-duration-0-5s hover_scale-1-1 radius-24"
-              >
-                흥미로워요
-              </button>
+              <button class="hero-button">반가워요</button>
+              <button class="hero-button">흥미로워요</button>
             </div>
           </div>
         </section>
         <!-- 스킬 태그 섹션 -->
-        <section
-          id="skills"
-          class="margin-bottom-50 scroll-margin-top-100 margin-right-40"
-        >
+        <section id="skills">
           <div class="font-weight-600 font-size-28">스킬/관심사</div>
           <div id="skill-tags">
             <span>HTML</span>
@@ -128,114 +110,82 @@
           </div>
         </section>
         <!-- 카드 섹션 -->
-        <section
-          id="cards"
-          class="margin-bottom-50 scroll-margin-top-100 margin-right-40"
-        >
-          <div class="font-weight-600 font-size-28 margin-bottom-20">
+        <section id="cards">
+          <div class="margin-bottom-20 font-weight-600 font-size-28">
             나의 모습
           </div>
           <div class="cards-grid-container">
-            <div class="card-item radius-24 border-1">
+            <div class="card-item">
               <img src="images/웹계인 단체사진.jpg" alt="웹계인 단체사진" />
               <div class="relative">
-                <div class="font-weight-600 margin-bottom-8">
+                <div class="margin-bottom-8 font-weight-600">
                   웹계인 단체사진
                 </div>
                 <div>37기 웹계인과 함께 시작해요</div>
                 <div class="absolute top-2 right-10">
-                  <img
-                    class="heart hover_heart"
-                    src="images/하트.png"
-                    alt="하트"
-                  />
+                  <img class="heart" src="images/하트.png" alt="하트" />
                 </div>
               </div>
             </div>
-            <div class="card-item radius-24 border-1">
+            <div class="card-item">
               <img src="images/웹계인 첫차팟.jpg" alt="웹계인 첫차팟" />
               <div class="relative">
-                <div class="font-weight-600 margin-bottom-8">웹계인 첫차팟</div>
+                <div class="margin-bottom-8 font-weight-600">웹계인 첫차팟</div>
                 <div>저녁부터 아침까지 있었어요</div>
                 <div class="absolute top-2 right-10">
-                  <img
-                    class="heart hover_heart"
-                    src="images/하트.png"
-                    alt="하트"
-                  />
+                  <img class="heart" src="images/하트.png" alt="하트" />
                 </div>
               </div>
             </div>
-            <div class="card-item radius-24 border-1">
+            <div class="card-item">
               <img src="images/나1.jpg" alt="나1" />
               <div class="relative">
-                <div class="font-weight-600 margin-bottom-8">
+                <div class="margin-bottom-8 font-weight-600">
                   교토 철학의 길
                 </div>
                 <div>옛날에 철학가가 산책했던 길이에요</div>
                 <div class="absolute top-2 right-10">
-                  <img
-                    class="heart hover_heart"
-                    src="images/하트.png"
-                    alt="하트"
-                  />
+                  <img class="heart" src="images/하트.png" alt="하트" />
                 </div>
               </div>
             </div>
-            <div class="card-item radius-24 border-1">
+            <div class="card-item">
               <img src="images/나2.jpg" alt="나2" />
               <div class="relative">
-                <div class="font-weight-600 margin-bottom-8">교토 골목</div>
+                <div class="margin-bottom-8 font-weight-600">교토 골목</div>
                 <div>골목 어딘가에요</div>
                 <div class="absolute top-2 right-10">
-                  <img
-                    class="heart hover_heart"
-                    src="images/하트.png"
-                    alt="하트"
-                  />
+                  <img class="heart" src="images/하트.png" alt="하트" />
                 </div>
               </div>
             </div>
-            <div class="card-item radius-24 border-1">
+            <div class="card-item">
               <img src="images/나3.jpg" alt="나3" />
               <div class="relative">
-                <div class="font-weight-600 margin-bottom-8">오타루 전망대</div>
+                <div class="margin-bottom-8 font-weight-600">오타루 전망대</div>
                 <div>오타루에 있는 경치좋은 전망대에요</div>
                 <div class="absolute top-2 right-10">
-                  <img
-                    class="heart hover_heart"
-                    src="images/하트.png"
-                    alt="하트"
-                  />
+                  <img class="heart" src="images/하트.png" alt="하트" />
                 </div>
               </div>
             </div>
-            <div class="card-item radius-24 border-1">
+            <div class="card-item">
               <img src="images/나4.jpg" alt="나4" />
               <div class="relative">
-                <div class="font-weight-600 margin-bottom-8">삿포로 비에이</div>
+                <div class="margin-bottom-8 font-weight-600">삿포로 비에이</div>
                 <div>일본 드라마에 나와서 유명하대요</div>
                 <div class="absolute top-2 right-10">
-                  <img
-                    class="heart hover_heart"
-                    src="images/하트.png"
-                    alt="하트"
-                  />
+                  <img class="heart" src="images/하트.png" alt="하트" />
                 </div>
               </div>
             </div>
           </div>
         </section>
         <!-- 사진첩 -->
-        <section
-          id="albums"
-          class="margin-bottom-50 scroll-margin-top-100 margin-right-40"
-        >
+        <section id="albums">
           <div class="font-weight-600 font-size-28">사진첩</div>
-          <div
-            id="infinite-banner"
-            class="flex grow-0 shrink-0 flex-basis-100pc"
-          >
+          <div id="infinite-banner">
+            <!-- 기존 카드 리스트 -->
             <div class="album-imgs-container">
               <div>
                 <img class="album-img" src="images/일본1.jpg" alt="일본1" />
@@ -274,7 +224,7 @@
                 <img class="album-img" src="images/호주6.jpg" alt="호주6" />
               </div>
             </div>
-            <!-- 중복 카드 -->
+            <!-- 중복 카드 리스트 -->
             <div aria-hidden="true" class="album-imgs-container">
               <div>
                 <img class="album-img" src="images/일본1.jpg" alt="일본1" />
