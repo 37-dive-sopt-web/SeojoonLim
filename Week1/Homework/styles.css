@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 10px 40px;
+  padding: 1rem 2rem;
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(221, 221, 221);
 }
@@ -20,36 +20,42 @@
 #side-nav {
   text-wrap: nowrap;
   position: sticky;
-  left: 0px;
-  top: 125px;
-  margin: 20px 20px 0px 20px;
+  left: 0;
+  top: 10rem;
+  margin: 1rem 1rem 0 1rem;
 }
-.side-nav-list {
-  display: block;
-  padding: 0px 28px 0px 10px;
+#side-nav ul {
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 10px;
+  margin: 0;
+  padding: 0.75rem;
 }
 .side-nav-list:first-of-type {
-  margin-bottom: 8px;
-  border-radius: 20px 20px 4px 4px;
+  border-radius: 18px 18px 6px 6px;
 }
 .side-nav-list:not(:first-of-type):not(:last-of-type) {
-  margin-bottom: 8px;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 .side-nav-list:last-of-type {
-  border-radius: 4px 4px 20px 20px;
+  border-radius: 6px 6px 18px 18px;
+}
+.side-nav-list:hover {
+  background-color: rgb(208, 247, 206);
+}
+.side-nav-list a {
+  display: block;
+  padding: 0.625rem 1.75rem 0.625rem 0.5rem;
 }
 
 /* 히어로 */
 #hero {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  column-gap: 1.25rem;
   background-color: rgb(255, 240, 224);
   border-radius: 0px 0px 10px 10px;
-  padding: 20px 12px;
-  margin: 0px 40px 50px 0px;
-  scroll-margin-top: 100px;
+  padding: 1.25rem 0.75rem;
+  margin: 0 2.5rem 3rem 0;
 }
 .hero-profile {
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
@@ -66,7 +72,7 @@
   border-radius: 24px;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(221, 221, 221);
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
 }
 .hero-button:hover {
   transform: scale(1.1);
@@ -74,38 +80,36 @@
 
 /* 스킬 태그 */
 #skills {
-  margin: 0px 40px 50px 0px;
-  scroll-margin-top: 100px;
+  margin: 0 2.5rem 3rem 0;
 }
 #skill-tags {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 0.625rem
 }
 #skill-tags > span {
   background-color: rgb(247, 237, 206);
-  padding: 6px 12px;
+  padding: 0.5rem 1rem;
   border-radius: 24px;
 }
 
 /* 카드 */
 #cards {
-  margin: 0px 40px 50px 0px;
-  scroll-margin-top: 100px;
+  margin: 0 2.5rem 3rem 0;
 }
 .cards-grid-container {
   display: grid;
   gap: 15px;
 }
 .card-item {
-  padding: 0px 0px 20px 0px;
+  padding: 0 0 1.25rem 0;
   border-radius: 24px;
   border: 1px solid rgb(221, 221, 221);
   overflow: hidden;
 }
 .card-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-0.625rem);
   box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
     box-shadow 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -119,10 +123,10 @@
 .card-item-explanation {
   display: flex;
   justify-content: space-between;
-  padding: 2px 10px 0px;
+  padding: 0.2rem 0.625rem 0;
 }
 .card-item-explanation + p {
-  padding: 0px 10px;
+  padding: 0 0.625rem;
 }
 .heart {
   filter: grayscale(100%);
@@ -135,13 +139,12 @@
 
 /* 사진첩 */
 #albums {
-  margin: 0px 40px 50px 0px;
-  scroll-margin-top: 100px;
+  margin: 0 2.5rem 3rem 0;
 }
 #infinite-banner {
   border: 0.5px solid rgb(221, 221, 221);
   border-radius: 12px;
-  padding: 10px;
+  padding: 0.625rem;
   background-color: bisque;
   overflow-x: hidden;
   flex: 0 0 100%;
@@ -153,7 +156,7 @@
 .album-imgs-container {
   display: flex;
   column-gap: 14px;
-  padding-right: 14px;
+  padding-right: 0.875rem;
   -ms-overflow-style: none;
   will-change: transform;
   scroll-snap-type: x mandatory;
@@ -167,8 +170,8 @@
   object-position: 50% 50%;
   border-radius: 10px;
   object-fit: cover;
-  width: 300px;
-  height: 220px;
+  width: 18.75rem;
+  height: 13.75rem;
 }
 .album-img:hover {
   transform: scale(1.05);
@@ -183,35 +186,10 @@
   }
 }
 
-/* 네비게이션 */
-#side-nav ul {
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 10px;
-  margin: 0;
-  padding: 12px;
-}
-.side-nav-list:hover {
-  background-color: rgb(208, 247, 206);
-}
-
 /* 푸터 */
 footer {
   background-color: rgb(255, 240, 224);
-  padding: 20px 0px;
-}
-
-/* position */
-.relative {
-  position: relative;
-}
-.absolute {
-  position: absolute;
-}
-.top-2 {
-  top: 2px;
-}
-.right-10 {
-  right: 10px;
+  padding: 1.25rem 0;
 }
 
 /* display */
@@ -224,10 +202,10 @@ footer {
   margin: 0;
 }
 .margin-bottom-8 {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 .margin-bottom-20 {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 /* 이미지 */
@@ -262,10 +240,10 @@ footer {
   font-weight: 600;
 }
 .font-size-28 {
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 .font-size-16 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /* 기본 태그 */
@@ -283,7 +261,6 @@ a {
 }
 main {
   display: flex;
-  align-items: flex-start;
 }
 h1,
 h2,
@@ -295,8 +272,11 @@ p {
   margin: 0;
   padding: 0;
 }
+:root {
+  scroll-behavior: smooth;
+}
 
-/* media */
+/* @media */
 @media screen and (width <= 768px) {
   .cards-grid-container {
     grid-template-columns: repeat(1, 1fr);
