@@ -88,7 +88,7 @@
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-top: 0.625rem
+  margin-top: 0.625rem;
 }
 #skill-tags > span {
   background-color: rgb(247, 237, 206);
@@ -142,15 +142,18 @@
 /* 사진첩 */
 #albums {
   margin: 0 2.5rem 3rem 0;
+  scroll-snap-type: x mandatory;
 }
 #infinite-banner {
   border: 0.5px solid rgb(221, 221, 221);
   border-radius: 12px;
   padding: 0.625rem;
   background-color: bisque;
-  overflow-x: hidden;
-  flex: 0 0 100%;
+  overflow-x: auto;
+  -ms-overflow-style: none;
   display: flex;
+  scroll-snap-align: start;
+  width: 200%;
 }
 #infinite-banner:hover .album-imgs-container {
   animation-play-state: paused;
@@ -161,12 +164,12 @@
   padding-right: 0.875rem;
   -ms-overflow-style: none;
   will-change: transform;
-  scroll-snap-type: x mandatory;
   animation: scrolling 80s linear infinite;
 }
-.album-imgs-container::-webkit-scrollbar {
+#infinite-banner::-webkit-scrollbar {
   display: none;
 }
+
 .album-img {
   scroll-snap-align: start;
   object-position: 50% 50%;
