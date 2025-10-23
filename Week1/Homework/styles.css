@@ -20,9 +20,11 @@
 #side-nav {
   text-wrap: nowrap;
   position: sticky;
-  left: 0;
-  top: 10rem;
+  left: 0px;
+  top: 121px;
+  z-index: 10;
   margin: 1rem 1rem 0 1rem;
+  height: auto;
 }
 #side-nav ul {
   border: 1px solid rgb(221, 221, 221);
@@ -261,6 +263,7 @@ a {
 }
 main {
   display: flex;
+  align-items: flex-start;
 }
 h1,
 h2,
@@ -274,6 +277,7 @@ p {
 }
 :root {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 /* @media */
