@@ -143,6 +143,7 @@
 #albums {
   margin: 0 2.5rem 3rem 0;
   scroll-snap-type: x mandatory;
+  overflow-x: hidden;
 }
 #infinite-banner {
   border: 0.5px solid rgb(221, 221, 221);
