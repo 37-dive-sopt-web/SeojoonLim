@@ -247,6 +247,11 @@ footer {
   font-size: 1rem;
 }
 
+/* overflow */
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
 /* 기본 태그 */
 * {
   box-sizing: border-box;
