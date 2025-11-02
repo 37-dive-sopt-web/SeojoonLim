@@ -123,29 +123,20 @@ function deleteWebMember() {
 // 헤드 체크박스 토글
 function toggleHeadCheckbox(headCheckbox) {
   const isChecked = headCheckbox.checked;
-  if (isChecked) {
-    const checkAll = document.querySelectorAll(".checkbox-one");
-    checkAll.forEach((checkbox) => {
-      checkbox.checked = true;
-    });
-  } else {
-    const uncheckAll = document.querySelectorAll(".checkbox-one");
-    uncheckAll.forEach((checkbox) => {
-      checkbox.checked = false;
-    });
-  }
+  const bodyCheckboxes = document.querySelectorAll(".checkbox-one");
+  bodyCheckboxes.forEach((checkbox) => {
+    checkbox.checked = isChecked;
+  });
 }
 
 // 바디 체크박스에 의한 헤드 체크박스 토글
 function toggleBodyCheckbox() {
-  const bodyCheckbox = document.querySelectorAll(".checkbox-one");
+  const bodyCheckboxes = document.querySelectorAll(".checkbox-one");
+  const bodyCheckboxesChecked = document.querySelectorAll(
+    ".checkbox-one:checked"
+  );
   const headCheckbox = document.querySelector("#checkbox-all");
-  let countChecked = 0;
-  bodyCheckbox.forEach((checkbox) => {
-    if (checkbox.checked) ++countChecked;
-  });
-  if (bodyCheckbox.length === countChecked) headCheckbox.checked = true;
-  else headCheckbox.checked = false;
+  headCheckbox.checked = bodyCheckboxes.length === bodyCheckboxesChecked.length;
 }
 
 // 모달의 입력값이 모두 입력됐는지 확인
