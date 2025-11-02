@@ -37,7 +37,7 @@ function initTable() {
   resultTbody.replaceChildren();
 }
 
-// 필터된 테이블 렌더링
+// 테이블 렌더링
 function renderTable(tableArray) {
   const resultTbody = document.querySelector("#result-tbody");
   const tableCell = Array(8);
@@ -123,12 +123,7 @@ function deleteWebMember() {
   });
 
   modifiedWebPart = modifiedWebPart.filter((webPartItem) => {
-    for (let i = 0; i < checkedIds.length; i++) {
-      if (webPartItem["id"] === checkedIds[i]) {
-        return false;
-      }
-    }
-    return true;
+    return !checkedIds.includes(webPartItem['id']);
   });
 }
 
