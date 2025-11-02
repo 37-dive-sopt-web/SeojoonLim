@@ -7,19 +7,7 @@ let filteredWebPart = [];
 // 테이블 필터링
 function filterTable() {
   // 입력된 값을 객체로 저장
-  const filterList = {};
-  const inputs = document.querySelectorAll(".filter-item [data-key]");
-  inputs.forEach((input) => {
-    const inputKey = input.getAttribute("data-key");
-    const inputValue = input.value;
-    if (!inputValue) return;
-    if (inputKey === "codeReviewGroup" || inputKey === "age") {
-      filterList[inputKey] = Number(inputValue);
-    } else {
-      filterList[inputKey] = String(inputValue);
-    }
-  });
-
+  const filterList = getFormData('filter-item');
   // 필터된 값과 파트원 값과 비교
   filteredWebPart = modifiedWebPart.filter((webPartItem) => {
     for (let key in filterList) {
@@ -97,20 +85,26 @@ function usableId() {
 // 웹파트 멤버 추가
 function addWebMember() {
   // 입력된 값을 객체로 저장
-  const inputList = {};
+  const inputList = getFormData('modal-item');
   inputList.id = usableId();
-  const inputs = document.querySelectorAll(".modal-item [data-key]");
+  modifiedWebPart.push(inputList);
+}
+
+// 폼에 작성된 값을 객체로 저장
+function getFormData(cssClass) {
+  const list = {};
+  const inputs = document.querySelectorAll(`.${cssClass} [data-key]`);
   inputs.forEach((input) => {
     const inputKey = input.getAttribute("data-key");
     const inputValue = input.value;
     if (!inputValue) return;
     if (inputKey === "codeReviewGroup" || inputKey === "age") {
-      inputList[inputKey] = Number(inputValue);
+      list[inputKey] = Number(inputValue.trim());
     } else {
-      inputList[inputKey] = String(inputValue);
+      list[inputKey] = String(inputValue.trim());
     }
   });
-  modifiedWebPart.push(inputList);
+  return list;
 }
 
 // 웹파트 멤버 삭제
