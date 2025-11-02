@@ -159,13 +159,7 @@ function toggleBodyCheckbox() {
 // 모달의 입력값이 모두 입력됐는지 확인
 function alertNotFilled() {
   const inputs = document.querySelectorAll(".modal-item [data-key]");
-  for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value === "") {
-      alert("입력값을 모두 입력해주세요.");
-      return false;
-    }
-  }
-  return true;
+  return !inputs.some(value => value === "");
 }
 
 // 로컬 스토리지 저장
