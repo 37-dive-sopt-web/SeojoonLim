@@ -7,7 +7,7 @@ let filteredWebPart = [];
 // 테이블 필터링
 function filterTable() {
   // 입력된 값을 객체로 저장
-  const filterList = getFormData('filter-item');
+  const filterList = getFormData("filter-item");
   // 필터된 값과 파트원 값과 비교
   filteredWebPart = modifiedWebPart.filter((webPartItem) => {
     for (let key in filterList) {
@@ -71,9 +71,7 @@ function usableId() {
   });
 
   ids.sort((a, b) => {
-    if (a > b) return 1;
-    else if (a < b) return -1;
-    else return 0;
+    return a - b;
   });
   for (let i = 0; i < ids.length; i++) {
     if (ids[i] !== value) return value;
@@ -85,7 +83,7 @@ function usableId() {
 // 웹파트 멤버 추가
 function addWebMember() {
   // 입력된 값을 객체로 저장
-  const inputList = getFormData('modal-item');
+  const inputList = getFormData("modal-item");
   inputList.id = usableId();
   modifiedWebPart.push(inputList);
 }
