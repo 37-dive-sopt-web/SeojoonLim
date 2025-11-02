@@ -55,6 +55,7 @@ function renderTable(tableArray) {
       "href",
       `https://github.com/${tableArray[i].github}`
     );
+    githubLink.setAttribute("rel", "noopenner noreferrer");
     githubLink.textContent = tableArray[i].github;
     // 셀을 생성하고 열에 부착
     const cellNode = [
@@ -123,7 +124,7 @@ function deleteWebMember() {
   });
 
   modifiedWebPart = modifiedWebPart.filter((webPartItem) => {
-    return !checkedIds.includes(webPartItem['id']);
+    return !checkedIds.includes(webPartItem["id"]);
   });
 }
 
