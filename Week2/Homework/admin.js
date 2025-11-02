@@ -187,6 +187,7 @@ function closeModal() {
   modal.classList.add("none");
 }
 
+initTable();
 renderTable(webPart);
 // form태그 submit 이벤트리스너
 filterForm.addEventListener("submit", (event) => {
