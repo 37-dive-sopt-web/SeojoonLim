@@ -172,14 +172,14 @@ function closeModal() {
 
 initTable();
 renderTable(webPart);
-// form태그 submit 이벤트리스너
+// submit 이벤트리스너, 필터 검색
 filterForm.addEventListener("submit", (event) => {
   event.preventDefault();
   filterTable();
   initTable();
   renderTable(filteredWebPart);
 });
-// form태그 reset 이벤트리스너
+// reset 이벤트리스너, 필터 입력값 초기화
 filterForm.addEventListener("reset", () => {
   initTable();
   renderTable(modifiedWebPart);
@@ -187,20 +187,31 @@ filterForm.addEventListener("reset", () => {
 // click 이벤트리스너
 main.addEventListener("click", (event) => {
   const target = event.target;
+  // 데이터 삭제
   if (target.id === "delete-btn") {
     deleteWebMember();
     setLocalStorage();
     initTable();
     renderTable(modifiedWebPart);
-  } else if (target.id === "checkbox-all") {
+  } 
+  // 헤드 체크박스
+  else if (target.id === "checkbox-all") {
     toggleHeadCheckbox(target);
-  } else if (target.classList.contains("checkbox-one")) {
+  } 
+  // 바디 체크박스
+  else if (target.classList.contains("checkbox-one")) {
     toggleBodyCheckbox();
-  } else if (target.id === "add-btn") {
+  }
+  // 모달 열기 
+  else if (target.id === "add-btn") {
     openModal();
-  } else if (target.closest("#modal-close-btn") || target.id === "modal") {
+  } 
+  // 모달 닫기
+  else if (target.closest("#modal-close-btn") || target.id === "modal") {
     closeModal();
-  } else if (target.id === "modal-add-btn") {
+  } 
+  // 모달에서의 데이터 추가
+  else if (target.id === "modal-add-btn") {
     if (!alertNotFilled()) return;
     addWebMember();
     setLocalStorage();
