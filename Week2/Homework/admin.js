@@ -29,21 +29,10 @@ function renderTable(tableArray) {
   const resultTbody = document.querySelector("#result-tbody");
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < tableArray.length; i++) {
-    const tableRow = document.createElement('tr');
+    const tableRow = document.createElement("tr");
     // 셀의 자식요소에 속성 추가
-    const checkbox = document.createElement("input");
-    checkbox.setAttribute("type", "checkbox");
-    checkbox.setAttribute("id", `result-checkbox-${tableArray[i].id}`);
-    checkbox.setAttribute("data-id", `${tableArray[i].id}`);
-    checkbox.setAttribute("name", "result-checkbox-one");
-    checkbox.setAttribute("class", "checkbox-one");
-    const githubLink = document.createElement("a");
-    githubLink.setAttribute(
-      "href",
-      `https://github.com/${tableArray[i].github}`
-    );
-    githubLink.setAttribute("rel", "noopener noreferrer");
-    githubLink.textContent = tableArray[i].github;
+    const checkbox = addCheckboxToCell(tableArray[i]);
+    const githubLink = addGithubToCell(tableArray[i]);
     // 셀을 생성하고 열에 부착
     const cellNode = [
       checkbox,
@@ -56,13 +45,31 @@ function renderTable(tableArray) {
       document.createTextNode(tableArray[i].age),
     ];
     for (let j = 0; j < cellNode.length; j++) {
-      const tableCell = document.createElement('td');
+      const tableCell = document.createElement("td");
       tableCell.appendChild(cellNode[j]);
       tableRow.appendChild(tableCell);
     }
     fragment.appendChild(tableRow);
   }
   resultTbody.appendChild(fragment);
+}
+
+function addCheckboxToCell(value) {
+  const checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.setAttribute("id", `result-checkbox-${value.id}`);
+  checkbox.setAttribute("data-id", `${value.id}`);
+  checkbox.setAttribute("name", "result-checkbox-one");
+  checkbox.setAttribute("class", "checkbox-one");
+  return checkbox;
+}
+
+function addGithubToCell(value) {
+  const githubLink = document.createElement("a");
+  githubLink.setAttribute("href", `https://github.com/${value.github}`);
+  githubLink.setAttribute("rel", "noopener noreferrer");
+  githubLink.textContent = value.github;
+  return githubLink;
 }
 
 // 웹파트 멤버 추가
@@ -179,23 +186,23 @@ main.addEventListener("click", (event) => {
     setLocalStorage();
     initTable();
     renderTable(webPart);
-  } 
+  }
   // 헤드 체크박스
   else if (target.id === "checkbox-all") {
     toggleHeadCheckbox(target);
-  } 
+  }
   // 바디 체크박스
   else if (target.classList.contains("checkbox-one")) {
     toggleBodyCheckbox();
   }
-  // 모달 열기 
+  // 모달 열기
   else if (target.id === "add-btn") {
     openModal();
-  } 
+  }
   // 모달 닫기
   else if (target.closest("#modal-close-btn") || target.id === "modal") {
     closeModal();
-  } 
+  }
   // 모달에서의 데이터 추가
   else if (target.id === "modal-add-btn") {
     if (!alertNotFilled()) return;
