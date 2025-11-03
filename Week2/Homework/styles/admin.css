@@ -4,10 +4,10 @@
   align-items: center;
   background-color: bisque;
   height: 65px;
+  justify-content: space-between;
   border-bottom: 0.5px solid rgb(221, 221, 221);
 }
 .top-header-left {
-  flex-grow: 1;
   flex-basis: 100%;
 }
 .top-header-left > img {
@@ -16,7 +16,6 @@
   padding-left: 1rem;
 }
 .top-header-center {
-  flex-grow: 1;
   flex-basis: 100%;
   font-weight: 600;
   font-size: 1.3rem;
@@ -24,7 +23,6 @@
   text-align: center;
 }
 .top-header-right {
-  flex-grow: 1;
   flex-basis: 100%;
   padding-right: 1rem;
   font-weight: 600;
