@@ -48,8 +48,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  row-gap: 0.3rem;
-  column-gap: 0.5rem;
+  gap: .5rem .3rem
 }
 .filter-item {
   display: flex;
@@ -212,8 +211,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  row-gap: 1rem;
-  column-gap: 0.5rem;
+  gap: .5rem 1rem;
 }
 .modal-item {
   display: flex;
