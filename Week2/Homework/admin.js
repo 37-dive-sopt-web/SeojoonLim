@@ -66,28 +66,12 @@ function renderTable(tableArray) {
   resultTbody.appendChild(fragment);
 }
 
-// 비어있는 id 탐색
-function usableId() {
-  let value = 1;
-  const ids = modifiedWebPart.map((member) => {
-    return Number(member.id);
-  });
-
-  ids.sort((a, b) => {
-    return a - b;
-  });
-  for (let i = 0; i < ids.length; i++) {
-    if (ids[i] !== value) return value;
-    ++value;
-  }
-  return value;
-}
-
 // 웹파트 멤버 추가
 function addWebMember() {
   // 입력된 값을 객체로 저장
   const inputList = getFormData("modal-item");
-  inputList.id = usableId();
+  inputList.id = Date.now();
+  // 멤버 추가
   modifiedWebPart.push(inputList);
 }
 
