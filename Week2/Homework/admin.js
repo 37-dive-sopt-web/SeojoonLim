@@ -1,7 +1,6 @@
 const main = document.querySelector("main");
 const filterForm = document.querySelector(".filter-container");
-const webPart = JSON.parse(localStorage.getItem("membersData")) || [];
-let modifiedWebPart = JSON.parse(JSON.stringify(webPart));
+let webPart = JSON.parse(localStorage.getItem("membersData")) || [];
 let filteredWebPart = [];
 
 // 테이블 필터링
@@ -9,7 +8,7 @@ function filterTable() {
   // 입력된 값을 객체로 저장
   const filterList = getFormData("filter-item");
   // 필터된 값과 파트원 값과 비교
-  filteredWebPart = modifiedWebPart.filter((webPartItem) => {
+  filteredWebPart = webPart.filter((webPartItem) => {
     for (let key in filterList) {
       if (filterList[key] !== webPartItem[key]) {
         return false;
@@ -72,7 +71,7 @@ function addWebMember() {
   const inputList = getFormData("modal-item");
   inputList.id = Date.now();
   // 멤버 추가
-  modifiedWebPart.push(inputList);
+  webPart.push(inputList);
 }
 
 // 폼에 작성된 값을 객체로 저장
@@ -102,7 +101,7 @@ function deleteWebMember() {
     }
   });
 
-  modifiedWebPart = modifiedWebPart.filter((webPartItem) => {
+  webPart = webPart.filter((webPartItem) => {
     return !checkedIds.includes(webPartItem["id"]);
   });
 }
@@ -140,7 +139,7 @@ function alertNotFilled() {
 
 // 로컬 스토리지 저장
 function setLocalStorage() {
-  localStorage.setItem("membersData", JSON.stringify(modifiedWebPart));
+  localStorage.setItem("membersData", JSON.stringify(webPart));
 }
 
 // 모달 열기
@@ -169,7 +168,7 @@ filterForm.addEventListener("submit", (event) => {
 // reset 이벤트리스너, 필터 입력값 초기화
 filterForm.addEventListener("reset", () => {
   initTable();
-  renderTable(modifiedWebPart);
+  renderTable(webPart);
 });
 // click 이벤트리스너
 main.addEventListener("click", (event) => {
@@ -179,7 +178,7 @@ main.addEventListener("click", (event) => {
     deleteWebMember();
     setLocalStorage();
     initTable();
-    renderTable(modifiedWebPart);
+    renderTable(webPart);
   } 
   // 헤드 체크박스
   else if (target.id === "checkbox-all") {
@@ -204,6 +203,6 @@ main.addEventListener("click", (event) => {
     setLocalStorage();
     closeModal();
     initTable();
-    renderTable(modifiedWebPart);
+    renderTable(webPart);
   }
 });
