@@ -30,15 +30,12 @@ function renderTable(tableArray) {
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < tableArray.length; i++) {
     const tableRow = document.createElement("tr");
-    // 셀의 자식요소에 속성 추가
-    const checkbox = addCheckboxToCell(tableArray[i]);
-    const githubLink = addGithubToCell(tableArray[i]);
     // 셀을 생성하고 열에 부착
     const cellNode = [
-      checkbox,
+      addCheckboxToCell(tableArray[i]),
       document.createTextNode(tableArray[i].name),
       document.createTextNode(tableArray[i].englishName),
-      githubLink,
+      addGithubToCell(tableArray[i]),
       document.createTextNode(tableArray[i].gender),
       document.createTextNode(tableArray[i].role),
       document.createTextNode(tableArray[i].codeReviewGroup),
