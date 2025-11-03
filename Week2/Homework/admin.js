@@ -51,6 +51,7 @@ function renderTable(tableArray) {
   resultTbody.appendChild(fragment);
 }
 
+// 체크박스에 속성 추가
 function addCheckboxToCell(value) {
   const checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
@@ -61,6 +62,7 @@ function addCheckboxToCell(value) {
   return checkbox;
 }
 
+// 깃허브 링크 태그에 속성 추가
 function addGithubToCell(value) {
   const githubLink = document.createElement("a");
   githubLink.setAttribute("href", `https://github.com/${value.github}`);
