@@ -28,9 +28,9 @@ function initTable() {
 // 테이블 렌더링
 function renderTable(tableArray) {
   const resultTbody = document.querySelector("#result-tbody");
-  const tableCell = Array(8);
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i < tableArray.length; i++) {
-    const tableRow = resultTbody.insertRow();
+    const tableRow = document.createElement('tr');
     // 셀의 자식요소에 속성 추가
     const checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
@@ -43,7 +43,7 @@ function renderTable(tableArray) {
       "href",
       `https://github.com/${tableArray[i].github}`
     );
-    githubLink.setAttribute("rel", "noopenner noreferrer");
+    githubLink.setAttribute("rel", "noopener noreferrer");
     githubLink.textContent = tableArray[i].github;
     // 셀을 생성하고 열에 부착
     const cellNode = [
@@ -56,11 +56,14 @@ function renderTable(tableArray) {
       document.createTextNode(tableArray[i].codeReviewGroup),
       document.createTextNode(tableArray[i].age),
     ];
-    for (let j = 0; j < tableCell.length; j++) {
-      tableCell[j] = tableRow.insertCell();
-      tableCell[j].appendChild(cellNode[j]);
+    for (let j = 0; j < cellNode.length; j++) {
+      const tableCell = document.createElement('td');
+      tableCell.appendChild(cellNode[j]);
+      tableRow.appendChild(tableCell);
     }
+    fragment.appendChild(tableRow);
   }
+  resultTbody.appendChild(fragment);
 }
 
 // 비어있는 id 탐색
