@@ -28,7 +28,6 @@ function GameBoard({
   // 카드를 클릭했을 때
   const flipCard = (card) => {
     if (!isFirstFlipped) setIsFirstFlipped(true);
-
     if (card.matched) {
       setMessage("이미 매치되었습니다.");
       return;

@@ -14,6 +14,7 @@ function RankPage({ records, setRecords }) {
   const [sortRecords, setSortRecords] = useState([]);
   const initRecord = () => {
     setRecords([]);
+    localStorage.clear();
   }
 
   // 성공한 게임들 기록을 정렬
