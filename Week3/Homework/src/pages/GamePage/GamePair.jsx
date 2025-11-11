@@ -19,12 +19,14 @@ function GamePair({
   const matchedPairLength = matchedCard.length / 2;
   const localStorageRecord = JSON.parse(localStorage.getItem("record")) || [];
 
+  // 게임의 맞춘 짝과 남은 짝 갱신
   useEffect(() => {
     setMatchedPair(matchedPairLength);
     setEntirePair(entirePairLength);
     setRestPair(entirePairLength - matchedPairLength);
   }, [matchedCard, deckInfo.data, deckInfo.level]);
 
+  // 짝을 모두 다 맞췄을 때 게임 성공 띄우기
   useEffect(() => {
     if (entirePairLength === matchedPairLength && entirePairLength > 0) {
       const localRecord = {
@@ -34,11 +36,9 @@ function GamePair({
       };
       setMessage("성공");
       setRecord(localRecord);
-      
       setTimeout(() => {
         resetGame();
       }, 3000);
-
       setRecords((prev) => {
         const update = [...prev, localRecord];
         localStorage.setItem(

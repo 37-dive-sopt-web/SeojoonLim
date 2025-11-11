@@ -47,8 +47,6 @@ function GameBoard({
       ),
     }));
   };
-  useEffect(() => {}, [flippedCard]);
-
   // 카드가 flip 됐을 때마다 실행
   useEffect(() => {
     if (flippedCard.length !== 2) return;

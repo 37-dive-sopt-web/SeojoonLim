@@ -7,12 +7,14 @@ const timeOfLevel = {
 };
 
 function GameSelectLevel({ deckInfo, setDeckInfo, setTime, resetGame }) {
+  // 레벨 별 카드 랜덤 생성
   const generateDeck = (level = 1) => {
     level = Number(level);
     setTime(timeOfLevel[level]);
     setDeckInfo((prev) => ({ ...prev, level }));
   };
 
+  // 레벨이 바뀔 때마다 게임 초기화
   useEffect(() => {
     resetGame();
   }, [deckInfo.level]);

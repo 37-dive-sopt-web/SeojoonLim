@@ -16,6 +16,7 @@ function RankPage({ records, setRecords }) {
     setRecords([]);
   }
 
+  // 성공한 게임들 기록을 정렬
   useEffect(() => {
     setSortRecords(
       [...records].sort((a, b) => b.level - a.level || a.time - b.time)

@@ -12,6 +12,7 @@ function GameLeftTime({
   deckInfo,
   setRecord,
 }) {
+  // 카드가 처음 뒤집어졌을 때 카운트 시작
   useEffect(() => {
     if (!isFirstFlipped) return;
     setTimeCount(time);
@@ -26,6 +27,8 @@ function GameLeftTime({
     return () => clearInterval(counter); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFirstFlipped]);
 
+
+  // 남은 시간이 0초가 됐을 때 게임 실패 띄우기
   useEffect(() => {
     if (timeCount === 0) {
       setMessage("실패");

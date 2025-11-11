@@ -40,6 +40,7 @@ function GameInfo({
         resetGame={resetGame}
       />
       <div css={statusStyle}>
+        {/* 게임 남은 시간 */}
         <GameLeftTime
           deckInfo={deckInfo}
           time={time}
@@ -52,6 +53,7 @@ function GameInfo({
           setShowModal={setShowModal}
           setRecord={setRecord}
         />
+        {/* 맞춘 짝, 남은 짝 */}
         <GamePair
           deckInfo={deckInfo}
           matchedCard={matchedCard}
@@ -65,10 +67,12 @@ function GameInfo({
           setRecord={setRecord}
         />
       </div>
+      {/* 안내 메시지 */}
       <div>
         <p css={messageTitleStyle}>안내 메시지</p>
         <p css={messageStyle}>{message}</p>
       </div>
+      {/* 최근 히스토리 */}
       <div css={historiesWrapperStyle}>
         <p css={historiesTitleStyle}>최근 히스토리</p>
         <div css={historiesContainer}>

@@ -30,6 +30,7 @@ function GamePage({setRecords}) {
   return (
     <>
       <section css={sectionStyle}>
+        {/* 게임 정보창 */}
         <GameInfo
           deckInfo={deckInfo}
           setDeckInfo={setDeckInfo}
@@ -50,6 +51,7 @@ function GamePage({setRecords}) {
           record = {record}
           setRecord = {setRecord}
         />
+        {/* 게임 */}
         <GameBoard
           deckInfo={deckInfo}
           resetGame={resetGame}
@@ -64,6 +66,7 @@ function GamePage({setRecords}) {
         />
         
       </section>
+      {/* 모달 */}
       <Modal showModal={showModal} setShowModal={setShowModal} message={message} record={record}/>
     </>
   );

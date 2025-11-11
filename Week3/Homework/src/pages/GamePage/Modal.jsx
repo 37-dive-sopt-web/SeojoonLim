@@ -5,6 +5,7 @@ import {modalFrameStyle, modalContainerStyle, modalRestartStyle} from "./GamePag
 
 const Modal = ({ showModal, setShowModal, message, record }) => {
   const [modalCount, setModalCount] = useState(3);
+  // 게임의 성공/실패에 따른 모달 보여주기
   useEffect(() => {
     if (!showModal) return;
     const counter = setInterval(() => {
