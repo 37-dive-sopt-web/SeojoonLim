@@ -21,9 +21,9 @@ function GameLeftTime({
         if (prev <= 0) {
           clearInterval(counter);
           return 0;
-        } else return prev - 1;
+        } else return (prev - 0.01).toFixed(2);
       });
-    }, 1000);
+    }, 10);
     return () => clearInterval(counter); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFirstFlipped]);
 
