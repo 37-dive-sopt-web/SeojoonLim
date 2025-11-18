@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import deleteUser from "../../apis/deleteUser";
-import { getLocalStorage } from "../../utils/LocalStorage";
+import { clearLocalStorage, getLocalStorage } from "../../utils/LocalStorage";
 import type { Dispatch, SetStateAction } from "react";
 import {
   modalBackGroundStyle,
@@ -25,6 +25,7 @@ function Modal({ showModal, setShowModal }: modalProps) {
     try {
       const id = getLocalStorage();
       await deleteUser(id);
+      clearLocalStorage();
       alert("회원 탈퇴 성공")
       navigate("/login");
     } catch {
