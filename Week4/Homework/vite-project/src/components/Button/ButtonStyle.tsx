@@ -14,6 +14,7 @@ export const buttonStyle = (isColored: boolean, isDisabled?: boolean) => css`
   font-weight: 700;
   transition: background-color 0.3s ease;
   border: 0.2px solid rgb(221, 221, 221);
+  cursor: pointer;
 
   &:hover {
     background-color: ${isColored ? "rgb(113, 251, 53)" : theme.colors.white};
