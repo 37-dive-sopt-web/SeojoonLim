@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import getUser from "../apis/getUser";
 import { getLocalStorage } from "../utils/LocalStorage";
-import type { Dispatch, SetStateAction } from "react";
 interface useGetNameReturn {
   name: string;
 }
